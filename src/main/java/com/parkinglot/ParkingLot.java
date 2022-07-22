@@ -22,7 +22,12 @@ public class ParkingLot {
     }
 
     public Car fetch(Ticket ticket) {
-        Car car = this.ticketMap.get(ticket);
-        return car;
+        for (Ticket ticketKey : this.ticketMap.keySet()) {
+            if(ticketKey==ticket) {
+                Car car = this.ticketMap.get(ticket);
+                return car;
+            }
+        }
+        return null;
     }
 }
