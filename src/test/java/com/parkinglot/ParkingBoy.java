@@ -18,11 +18,18 @@ public class ParkingBoy {
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
         Boy boy = new Boy(parkingLots);
+
+
         //when
         Ticket ticket = boy.parking(car);
+        parkingLot2.getTicketMap().containsKey(ticket);
 
         //then
         assertNotNull(ticket);
     }
+
+
+//    @Test
+//    void should_return_car_parked_in_second_parking_lot_when_park_the_car_given_a_boy_and
 
 }

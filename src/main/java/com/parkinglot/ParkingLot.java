@@ -46,4 +46,8 @@ public class ParkingLot {
         }
         throw new WrongTicketException("Unrecognized parking ticket");
     }
+
+    public boolean isParkCar(){
+      return true;
+    }
 }

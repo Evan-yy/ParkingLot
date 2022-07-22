@@ -1,5 +1,6 @@
 package com.parkinglot;
 
+import net.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -148,6 +149,7 @@ public class ParkingLotTest {
         assertEquals("No available position", positionException.getMessage());
 
     }
+
 
 
 }
