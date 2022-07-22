@@ -13,6 +13,9 @@ public class ParkingLot {
 
 
     public Ticket parking(Car car) {
+        if(space==0){
+            return null;
+        }
         Ticket ticket = new Ticket();
         this.ticketMap.put(ticket, car);
         return ticket;
