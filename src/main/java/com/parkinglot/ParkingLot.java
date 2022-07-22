@@ -3,17 +3,17 @@ package com.parkinglot;
 import java.util.HashMap;
 
 public class ParkingLot {
-    private int space;
+    private int position;
     private HashMap<Ticket, Car> ticketMap;
 
-    public ParkingLot(int space) {
-        this.space = space;
+    public ParkingLot(int position) {
+        this.position = position;
         this.ticketMap=new HashMap<Ticket,Car>();
     }
 
 
     public Ticket parking(Car car) {
-        if(space==0){
+        if(ticketMap.size()>=position){
             return null;
         }
         Ticket ticket = new Ticket();
@@ -21,13 +21,13 @@ public class ParkingLot {
         return ticket;
     }
 
-    public Car fetch(Ticket ticket) {
+    public Car fetch(Ticket ticket) throws WrongTicketException {
         for (Ticket ticketKey : this.ticketMap.keySet()) {
             if(ticketKey==ticket) {
                 Car car = this.ticketMap.get(ticket);
                 return car;
             }
         }
-        return null;
+        throw new WrongTicketException("Unrecognized parking ticket");
     }
 }
