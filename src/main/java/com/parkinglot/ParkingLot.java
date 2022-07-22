@@ -18,4 +18,8 @@ public class ParkingLot {
         return ticket;
     }
 
+    public Car fetch(Ticket ticket) {
+        Car car = this.ticketMap.get(ticket);
+        return car;
+    }
 }
